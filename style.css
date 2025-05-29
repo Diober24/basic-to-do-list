@@ -2,11 +2,23 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
-  padding: 0;
+  padding: 30px; /* Add padding at the top */
   display: flex;
-  height: 100vh;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Align to the top */
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container img {
+    margin-top: -10px; /* Adjust as needed */
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
 }
 
 .todo-container {
@@ -14,7 +26,7 @@ body {
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  width: 300px;
+  width: 400px;
 }
 
 h1 {
@@ -25,6 +37,29 @@ h1 {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+}
+
+.input-section input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+}
+
+.input-section button {
+  padding: 10px 15px;
+  background-color: #b07cfe;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(176, 124, 254, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-section button:hover {
+  background-color: #8c4aff;
 }
 
 #taskInput {
@@ -46,10 +81,41 @@ h1 {
 #taskList li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
-  background: #eee;
+  background: #f4ebfd;
   padding: 10px;
   border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+#taskList li:hover {
+  background: #e8d9f9;
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    cursor: pointer;
+}
+
+.task-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-icon.completed {
+    transform: rotate(360deg);
 }
 
 #taskList li .delete-btn {
@@ -57,3 +123,6 @@ h1 {
   cursor: pointer;
   font-weight: bold;
 }
+
+
+
